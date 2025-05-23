@@ -1,0 +1,17 @@
+name: 'dbt_patient_profile'
+version: '1.0'
+config-version: 2
+
+profile: 'default'
+
+model-paths: ["models"]
+source-paths: ["models"]
+
+models:
+  dbt_patient_profile:
+    staging:
+      materialized: view
+    intermediate:
+      materialized: ephemeral
+    marts:
+      materialized: table
